@@ -13,13 +13,17 @@ public class MarkdownParse {
         while(currentIndex < markdown.length()) {
             int nextOpenBracket = markdown.indexOf("[", currentIndex);
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
+            if(nextCloseBracket == -1){break;} 
             int openParen = markdown.indexOf("(", nextCloseBracket);
+            if(openParen == -1){break;}
             int closeParen = markdown.indexOf(")", openParen);
+            if(closeParen == -1){break;}
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
         }
         return toReturn;
     }
+
     public static void main(String[] args) throws IOException {
 		Path fileName = Path.of(args[0]);
 	    String contents = Files.readString(fileName);

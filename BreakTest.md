@@ -3,3 +3,6 @@
 
 
 # here is an open brace:[.   here is a close brace:].  (no link in these parenths).
+[here is a close brace] (asasasasasas)
+
+![image](aaaaaaaa)

@@ -1,2 +1,2 @@
-[link1](https://aaaaaaaabb)
-[link2](https://aaaaaaaa)
+[link1](https://1)
+[link2](https://2)

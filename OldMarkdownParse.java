@@ -11,15 +11,15 @@ public class OldMarkdownParse {
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
             int nextOpenBracket = markdown.indexOf("[", currentIndex);
-            if(nextOpenBracket == -1){break;} 
-            if(nextOpenBracket != 0){if((markdown.charAt(nextOpenBracket - 1) == '!')){break;}}
+            if(nextOpenBracket == -1){return toReturn;} 
+            if(nextOpenBracket != 0){if((markdown.charAt(nextOpenBracket - 1) == '!')){return toReturn;}}
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
-            if(nextCloseBracket == -1){break;} 
-            if(nextCloseBracket == -1 || !(markdown.charAt(nextCloseBracket + 1) == '(')  ){break;} 
+            if(nextCloseBracket == -1){return(toReturn);} 
+            if(nextCloseBracket == -1 || !(markdown.charAt(nextCloseBracket + 1) == '(')  ){return toReturn;} 
             int openParen = markdown.indexOf("(", nextCloseBracket);
-            if(openParen == -1){break;}
+            if(openParen == -1){return toReturn;}
             int closeParen = markdown.indexOf(")", openParen);
-            if(closeParen == -1){break;}
+            if(closeParen == -1){return toReturn;}
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
         }

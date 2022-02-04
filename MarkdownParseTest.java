@@ -12,7 +12,7 @@ public class MarkdownParseTest {
     @Test
     public void addition() {
         assertEquals(2, 1 + 1);
-    }/*
+    }
     @Test
     public void testGetLinks1() throws IOException{
         String file=Files.readString(Path.of("test-file.md"));
@@ -22,13 +22,13 @@ public class MarkdownParseTest {
     public void testGetLinks2() throws IOException{
         String file=Files.readString(Path.of("test-file2.md"));
         assertEquals(MarkdownParse.getLinks(file), 
-        List.of("https://www.youtube.com/watch?v=dQw4w9WgXcQ","https://www.google.com/maps"));
+        List.of("https://something.com","some-page.html"));
     }
     @Test
     public void testGetLinks3() throws IOException{
         String file=Files.readString(Path.of("test-file3.md"));
         assertEquals(MarkdownParse.getLinks(file), 
-        List.of("https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+        List.of());
     }
     @Test
     public void testGetLinksBulk() throws IOException{
@@ -43,5 +43,11 @@ public class MarkdownParseTest {
         assertEquals(MarkdownParse.getLinks(file),List.of("a link on the first line"));
         file=Files.readString(Path.of("test-file5.md"));
         assertEquals(MarkdownParse.getLinks(file),List.of());
-    }*/
+    }
+    @Test
+    public void testGetLinks5() throws IOException{
+        String file=Files.readString(Path.of("breakingTest.md"));
+        assertEquals(MarkdownParse.getLinks(file), 
+        List.of("https://something.com", "some-page.html", "", "www.google.com/test"));
+    }
 }

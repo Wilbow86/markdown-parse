@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MarkdownParseTest {
+public class ClinMarkdownParseTest {
     @Test
     public void addition() {
         assertEquals(2, 1 + 1);
